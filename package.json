@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/635753205/Publish-Information-Website/issues"
   },
-  "homepage": "https://github.com/635753205/Publish-Information-Website#readme"
+  "homepage": "https://github.com/635753205/Publish-Information-Website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
