@@ -7,4 +7,3 @@ exports.genre_list = function(req,res){
 exports.genre_detail = function(req,res){
     res.send('NOT IMPLEMENTED:Genre detail:' + req.params.id)
 }
-
