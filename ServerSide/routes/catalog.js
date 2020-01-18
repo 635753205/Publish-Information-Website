@@ -29,7 +29,7 @@ router.get('/genres',genre_controller.genre_list)
 
 
 //information instance routes
-router.get('/bookinstances',info_instance_controller.infoInstance_list)
+router.get('/informationinstances',info_instance_controller.infoInstance_list)
 
 
 module.exports = router
