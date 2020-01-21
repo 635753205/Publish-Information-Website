@@ -2,4 +2,17 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em information], a very basic Express website 
+
+  h1 Dynamic contents
+
+  if error
+    p Error getting dynamic content
+  else
+    p The informations has the following record counts:
+
+    ul
+      li #[strong infromations:] !{data.information_counts}
+      li #[strong Copies] !{data.information_instance_count}
+      li #[strong Authors] !{data.author_count}
+      li #[strong Geners] !{data.genre_count}
