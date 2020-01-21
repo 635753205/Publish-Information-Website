@@ -7,7 +7,7 @@ const authorSchema = new Schema({
 })
 
 authorSchema.virtual('name')
-    .get(() => {
+    .get(function(){
         let fullName = ''
         if (this.first_name && this.last_name) {
             fullName = `${this.first_name} ${this.last_name}`
