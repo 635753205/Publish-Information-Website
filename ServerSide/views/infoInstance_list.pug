@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+
+    ul
+        each val in infoInstances_list
+            li
+                a(href=val.url) #{val.info.title} : #{val.imprint}
+        else
+            li There are no information copies in this
