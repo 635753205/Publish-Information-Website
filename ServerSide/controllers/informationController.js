@@ -26,8 +26,15 @@ exports.index = function(req,res){
     })
 }
 
-exports.information_list = function(req,res){
-    res.send('NOT IMPLEMENTED: information list');
+exports.information_list = function(req,res,next){
+    information.find({},'title author')
+    .populate('Author')
+    .exec(function(err,list_informations){
+        if(err){
+            return next(err)
+        }
+        res.render('information_list',{title:'Information List',information_list:list_informations})
+    })
 }
 
 exports.information_detail = function(req,res){
