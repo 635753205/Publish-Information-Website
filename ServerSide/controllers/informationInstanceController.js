@@ -1,7 +1,14 @@
 const informationInstance = require('../models/infoInstance')
 
-exports.infoInstance_list = function(req,res){
-    res.send('NOT IMPLEMENTED: informations list');
+exports.infoInstance_list = function(req,res,next){
+    informationInstance.find()
+    .populate('informationInstance')
+    .exec(function(err,list_infoInstances){
+        if(err){
+            return next(err)
+        }
+        res.render('infoInstance_list',{title:'Information instance list',infoInstances_list:list_infoInstances})
+    })
 }
 
 exports.infoInstance_detail = function(req,res){
