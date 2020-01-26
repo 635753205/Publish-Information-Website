@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Author: #{author.name}
+    p #{author.first_name} #{author.last_name}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+        h4 Informations
+        
+        dl
+            each information in authors_information
+                dt
+                    a(href=information.url) #{information.title}
+                dd  #{information.contents}
+            else
+                p This author has no books
