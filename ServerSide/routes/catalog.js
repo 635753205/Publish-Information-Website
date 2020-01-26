@@ -18,6 +18,8 @@ router.get('/',info_controller.index)
 
 router.get('/informations',info_controller.information_list)
 
+router.get('/information/:id',info_controller.information_detail)
+
 router.get('/information/create',info_controller.information_create_get)
 
 router.post('/information/create',info_controller.information_create_post)
@@ -51,6 +53,8 @@ router.post('/author/:id/update',author_controller.author_update_post)
 //genre routes
 router.get('/genres',genre_controller.genre_list)
 
+router.get('/genre/:id',genre_controller.genre_detail)
+
 router.get('/genre/create',genre_controller.genre_create_get)
 
 router.post('/genre/create',genre_controller.genre_create_post)
@@ -66,6 +70,8 @@ router.post('/genre/:id/update',genre_controller.genre_update_post)
 
 //information instance routes
 router.get('/informationinstances',info_instance_controller.infoInstance_list)
+
+router.get('/informationinstance/:id',info_instance_controller.infoInstance_detail)
 
 router.get('/informationinstance/create',info_instance_controller.infoInstance_create_get)
 
