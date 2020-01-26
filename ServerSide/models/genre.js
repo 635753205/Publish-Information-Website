@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const Schema = mongoose.Schema
 
 const genreSchema = new Schema({
@@ -18,6 +17,7 @@ genreSchema.virtual('genre_name')
 
 genreSchema.virtual('url')
 .get(function(){
+    console.log(this._id);
     return `/catalog/genre/${this._id}`
 })
 module.exports = mongoose.model('Genre', genreSchema)
