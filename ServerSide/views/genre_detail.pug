@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Genre: #{genre.name}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+        h4 Informations
+
+        dl
+            each information in genre_informations
+                dt
+                    a(href=information.url) #{information.title}
+                dd  #{information.contents}
+            else
+                p This genre has no informations
