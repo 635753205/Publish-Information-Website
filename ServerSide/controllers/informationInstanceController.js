@@ -1,5 +1,4 @@
 const informationInstance = require('../models/infoInstance')
-
 exports.infoInstance_list = function(req,res,next){
     informationInstance.find()
     .populate('informationInstance')
