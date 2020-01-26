@@ -106,18 +106,6 @@ function createAuthors(cb) {
       authorCreate('悟能', '朱', callback)
     },
     function(callback){
-      authorCreate('八戒', '猪', callback)
-    },
-    function(callback){
-      authorCreate('悟能', '朱', callback)
-    },
-    function(callback){
-      authorCreate('元帅', '天蓬', callback)
-    },
-    function(callback){
-      authorCreate('皮龟', '憨', callback)
-    },
-    function(callback){
       authorCreate('碧落', '乔', callback)
     },
     function(callback){
@@ -125,13 +113,6 @@ function createAuthors(cb) {
     },
     function(callback){
       authorCreate('徐坤', '菜', callback)
-    },
-    function(callback){
-      authorCreate('瑗', '王', callback)
-    },
-
-    function(callback){
-      authorCreate('寒', '撸', callback)
     }
 
   ], cb)
@@ -163,34 +144,34 @@ function createInformation(cb) {
     },
 
     function(callback){
-      infoCreate('安徽师范大学皖江学院爱心协会活动通知', authors[1], '通知：爱心协会将于本周六举办爱心捐赠衣服活动，请各位同学积极参加！', genres[0], callback)
+      infoCreate('安徽师范大学皖江学院爱心协会活动通知', authors[0], '通知：爱心协会将于本周六举办爱心捐赠衣服活动，请各位同学积极参加！', genres[0], callback)
     },
     function(callback){
       infoCreate('失物招领',authors[2],'有哪位同学于今天上午遗失了一张银行卡，请失主联系“189XXXXXXXX”！',  genres[2],callback)
     },
     function(callback){
-      infoCreate('失物招领',authors[3],'有哪位同学于昨天中午在食堂遗失了一张校园卡，请失主联系“189XXXXXXXX”！',  genres[2],callback)
+      infoCreate('失物招领',authors[2],'有哪位同学于昨天中午在食堂遗失了一张校园卡，请失主联系“189XXXXXXXX”！',  genres[2],callback)
     },
     function(callback){
-      infoCreate('失物招领',authors[4],'有哪位同学于今天下午在操场丢失一件外套，请失主联系“189XXXXXXXX”！',  genres[2],callback)
+      infoCreate('失物招领',authors[1],'有哪位同学于今天下午在操场丢失一件外套，请失主联系“189XXXXXXXX”！',  genres[2],callback)
     },
     function(callback){
-      infoCreate('失物招领',authors[5],'有哪位同学于今天上午在图书馆丢失了一本高数书，请失主联系“189XXXXXXXX”！',  genres[2],callback)
+      infoCreate('失物招领',authors[1],'有哪位同学于今天上午在图书馆丢失了一本高数书，请失主联系“189XXXXXXXX”！',  genres[2],callback)
     },
     function(callback){
-      infoCreate('寻物启事',authors[6],'本人不慎在图书馆丢失一本高数书，有拾到者请与XX先生联系，必有酬谢！',  genres[3],callback)
+      infoCreate('寻物启事',authors[3],'本人不慎在图书馆丢失一本高数书，有拾到者请与XX先生联系，必有酬谢！',  genres[3],callback)
     },
     function(callback){
-      infoCreate('寻物启事',authors[7],'本人不慎在食堂丢失一张校园卡，有拾到者请与XX先生联系，必有酬谢！', genres[3],callback)
+      infoCreate('寻物启事',authors[3],'本人不慎在食堂丢失一张校园卡，有拾到者请与XX先生联系，必有酬谢！', genres[3],callback)
     },
     function(callback){
-      infoCreate('寻物启事',authors[8],'本人不慎丢失一张银行卡，有拾到者请与XX先生联系，必有酬谢',genres[3],callback)
+      infoCreate('寻物启事',authors[2],'本人不慎丢失一张银行卡，有拾到者请与XX先生联系，必有酬谢',genres[3],callback)
     },
     function(callback){
-      infoCreate('安徽师范大学皖江学院文学社活动通知',authors[9],'通知：皖江学院文学社将于2020年1月15日下午2点在报告厅举办书法大赛，请各位同学积极参加！', genres[1],callback)
+      infoCreate('安徽师范大学皖江学院文学社活动通知',authors[4],'通知：皖江学院文学社将于2020年1月15日下午2点在报告厅举办书法大赛，请各位同学积极参加！', genres[1],callback)
     },
     function(callback){
-      infoCreate('安徽师范大学皖江学院新闻社活动通知',authors[10],'通知：皖江学院文学社将于2020年1月20日下午2点在报告厅举办“我是小记者”活动，请各位同学积极参加！', genres[1],callback)
+      infoCreate('安徽师范大学皖江学院新闻社活动通知',authors[4],'通知：皖江学院文学社将于2020年1月20日下午2点在报告厅举办“我是小记者”活动，请各位同学积极参加！', genres[1],callback)
     },
   ], cb)
 }
