@@ -42,12 +42,12 @@ exports.information_detail = function (req, res,next) {
     async.parallel({
         information: function (callback) {
             Information.findById(req.params.id)
-                .populate('Author')
-                .populate('Genre')
+                .populate('author')
+                .populate('genre')
                 .exec(callback)
         },
         info_instance:function(callback){
-            infromationInstance.find({'info':req.params.id})
+            infromationInstance.find({'information':req.params.id})
             .exec(callback)
         }
     },function(err,result) {
@@ -57,6 +57,7 @@ exports.information_detail = function (req, res,next) {
             err.status = 404
             return next(err)
         }
+        console.log(result)
 
         res.render('info_detail',{title:result.information.title,information:result.information,info_instance:result.info_instance})
     })
