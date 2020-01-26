@@ -77,9 +77,9 @@ function infoCreate(title, author, contents, genre,cb) {
   })
 }
 
-function infoInstanceCreate(info, imprint, cb) {
+function infoInstanceCreate(information, imprint, cb) {
   infoInstanceDetail = {
-    info: info,
+    information: information,
     imprint: imprint
   }
 
@@ -92,7 +92,7 @@ function infoInstanceCreate(info, imprint, cb) {
     }
     console.log(`New InfoInstance: ${infoInstance}`)
     infoInstances.push(infoInstance)
-    cb(null, info)
+    cb(null, information)
   })
 }
 
