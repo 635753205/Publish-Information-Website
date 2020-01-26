@@ -1,0 +1,10 @@
+extends layout
+
+block content
+
+    h1 ID: #{instance_information._id}
+
+    p #[strong Title:]
+        a(href=instance_information.information.url) #{instance_information.information.title}
+
+    p #[strong Imprint:] #{instance_information.imprint}
