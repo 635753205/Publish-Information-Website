@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const infoInstanceSchema = new Schema({
-    info: { type: Schema.Types.ObjectId, ref: 'info', required: true },
+    information: { type: Schema.Types.ObjectId, ref: 'information', required: true },
     imprint: { type: String, required: true },
 })
 
