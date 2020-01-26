@@ -20,4 +20,4 @@ genreSchema.virtual('url')
     console.log(this._id);
     return `/catalog/genre/${this._id}`
 })
-module.exports = mongoose.model('Genre', genreSchema)
+module.exports = mongoose.model('genre', genreSchema)
