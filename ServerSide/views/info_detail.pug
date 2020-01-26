@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Title: #{information.title}
+
+    p #[strong Author:]
+        a(href=information.author.url) #{information.author.name}
+    p #[strong Contents:] #{information.contents}
+
+    p #[strong Genre:]&nbsp;
+        each val, index in information.genre
+            a(href=val.url) #{val.name}
+            if index < information.genre.length - 1
+                |,
+    
