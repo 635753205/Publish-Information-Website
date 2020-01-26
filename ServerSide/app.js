@@ -6,7 +6,7 @@ var logger = require('morgan');
 //reuqire the mongoose package
 var mongoose = require('mongoose')
 //get mongodb url
-var mongoDB  = 'mongodb+srv://panghu:panghu666@tigercluster-mdsfj.mongodb.net/info?retryWrites=true&w=majority'
+var mongoDB  = 'mongodb://localhost:27017/info'
 //connet the database
 mongoose.connect(mongoDB,{useNewUrlParser:true})
 //reference the database from the mongoose connection
