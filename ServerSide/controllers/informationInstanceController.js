@@ -1,12 +1,10 @@
 const informationInstance = require('../models/infoInstance')
 exports.infoInstance_list = function(req,res,next){
     informationInstance.find()
-    .populate('informationInstance')
-    .exec(function(err,list_infoInstances){
-        if(err){
-            return next(err)
-        }
-        res.render('infoInstance_list',{title:'Information instance list',infoInstances_list:list_infoInstances})
+    .populate('information')
+    .exec(function(err,list_information_instance) {
+        if(err){return next(err)}
+        res.render('infoInstance_list',{title:'Information Instance List',information_instance_list:list_information_instance})
     })
 }
 
