@@ -37,6 +37,8 @@ router.post('/information/:id/update',info_controller.information_update_post)
 
 router.get('/authors',author_controller.author_list)
 
+router.get('/author/:id',author_controller.author_detail)
+
 router.get('/author/create',author_controller.author_create_get)
 
 router.post('/author/create',author_controller.author_create_post)
