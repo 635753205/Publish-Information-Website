@@ -10,7 +10,6 @@ const infoInstanceSchema = new Schema({
 })
 infoInstanceSchema.virtual('url')
     .get(function () {
-        console.log(this._id)
         return `/catalog/informationinstance/${this._id}`
     })
 

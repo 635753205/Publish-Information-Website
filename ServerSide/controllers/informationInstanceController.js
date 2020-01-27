@@ -6,7 +6,6 @@ exports.infoInstance_list = function(req,res,next){
     .populate('information')
     .exec(function(err,list_information_instance) {
         if(err){return next(err)}
-        console.log(list_information_instance)
         res.render('infoInstance_list',{title:'Information Instance List',information_instance_list:list_information_instance})
     })
 }
@@ -21,7 +20,6 @@ exports.infoInstance_detail = function(req,res,next){
             err.status = 404
             return next(err)
         }
-        console.log(information_instance)
         res.render('information_instance_detail',{title:`Information:${information_instance.title}`,instance_information:information_instance})
     })
 }
