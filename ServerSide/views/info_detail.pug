@@ -12,6 +12,16 @@ block content
     p #[strong Contents:] #{information.contents}
 
     p #[strong Genres:] 
-        a(href=information.genre.url) #{information.genre.name}
+        each val,index in information.genre
+            a(href=information.genre.url) #{val.name}
+            if index < information.genre.length - 1
+                |,
+    div(style='margin-left:20px;margin-top:20px')
+        h4 Instance
+        each val in info_instance
+            p #[strong Id:]&nbsp;
+                a(href=val.url) #{val._id}
+        else
+            p There are no instance of this information
 
     
