@@ -6,7 +6,7 @@ const informationSchema = new Schema({
     title: { type: String, required: true },
     author: { type: Schema.Types.ObjectId, ref: 'author', required: true },
     contents: { type: String, required: true },
-    genre: { type: Schema.Types.ObjectId, ref: 'genre', required: true }
+    genre: [{type: Schema.Types.ObjectId, ref: 'genre'}]  
 })
 
 informationSchema.virtual('url')
