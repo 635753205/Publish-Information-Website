@@ -92,51 +92,50 @@ exports.information_create_post = [
     },
 
     //validate fields
-    body('title','Title must not be empty').isLength({min:1}).trim(),
-    body('author','Author must not be empty').isLength({min:1}).trim(),
-    body('contents','Contents must not be empty').isLength({min:1}).trim(),
-
+    body('title', 'Title must not be empty').isLength({ min: 1 }).trim(),
+    body('author', 'Author must not be empty').isLength({ min: 1 }).trim(),
+    body('contents', 'Contents must not be empty').isLength({ min: 1 }).trim(),
     sanitizeBody('*').escape(),
 
-    (req,res,next) => {
+    (req, res, next) => {
         const errors = validationResult(req)
         //Create information object with escaped and trimmed data
         let information = new Information({
-            title:req.body.title,
-            author:req.body.author,
-            contents:req.body.contents,
-            genre:req.body.genre
+            title: req.body.title,
+            author: req.body.author,
+            contents: req.body.contents,
+            genre: req.body.genre
         })
 
-        if(!errors.isEmpty()){
+        if (!errors.isEmpty()) {
 
             //Get all authors and genres for form
             async.parallel({
-                authors:function(callback){
+                authors: function (callback) {
                     Author.find(callback)
                 },
-                genres:function(callback){
+                genres: function (callback) {
                     Genre.find(callback)
                 }
-            },function(err,results){
-                if(err){return next(err)}
+            }, function (err, results) {
+                if (err) { return next(err) }
 
                 //Mark our selected genres as checked
                 for (let index = 0; index < results.genres.length; index++) {
-                    if(information.genre.indexOf(results.genres[index]._id) > -1){
+                    if (information.genre.indexOf(results.genres[index]._id) > -1) {
                         results.genres[index].checked = "true"
                     }
                 }
 
-                res.render('information_form',{authors:results.authors,genres:results.genres,information:information,errors:errors.array()})
+                res.render('information_form', { authors: results.authors, genres: results.genres, information: information, errors: errors.array() })
             })
 
             return
         }
 
-        else{
-            information.save(function(err){
-                if(err){return next(err)}
+        else {
+            information.save(function (err) {
+                if (err) { return next(err) }
                 res.redirect(information.url)
             })
         }
