@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+        if user
+            p
+                span 欢迎你,#{user.name}
+                span  | 
+                a(href="/layout" rel="external nofollow" ) 退出登录
+        else
+            p
+                a(href="/signup" rel="external nofollow" , data-toggle="modal", data-target="#signupModal") 注册
+                span  | 
+                a(href="/login" rel="external nofollow" , data-toggle="modal", data-target="#signinModal") 登录
