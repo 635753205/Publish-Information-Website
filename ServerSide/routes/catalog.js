@@ -10,9 +10,6 @@ const genre_controller = require('../controllers/genreController')
 
 const info_instance_controller = require('../controllers/informationInstanceController')
 
-const login_controller = require('../controllers/loginController')
-
-const signup_controller = require('../controllers/signupController')
 //config the routes
 
 //information routes
@@ -91,16 +88,6 @@ router.get('/informationinstance/:id/update', info_instance_controller.infoInsta
 router.post('/informationinstance/:id/update', info_instance_controller.infoInstance_update_post)
 
 router.get('/informationinstance/:id', info_instance_controller.infoInstance_detail)
-
-
-
-// router.get('/signup',signup_controller.user_signup_get)
-
-// router.get('/signup',signup_controller.user_signup_post)
-
-// router.get('/login',login_controller.user_login_get)
-
-// router.post('/login',login_controller.user_login_post)
 
 // router.post('/user/signup',login_controller.user_signup_form)
 

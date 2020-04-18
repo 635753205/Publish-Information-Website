@@ -3,19 +3,29 @@ block content
 
     h1= title
     
-    form.form-horizontal( role="form", method="POST", action='/user/signup')
-        .form-group
-            label.col-sm-2.control-label(for="signupName") 用户名
-            .col-sm-10
-            input#signupName.form-control(type="text", name="user[name]", placeholder="输入用户名")
-        .form-group
-            label.col-sm-2.control-label(for="signuppassword") 密码
-            .col-sm-10
-            input#signuppassword.form-control(type="password", name="user[password]", placeholder="输入密码")
-        .form-group
-            label.col-sm-2.control-label(for="signupemail") 邮箱
-            .col-sm-10
-            input#signupemail.form-control(type="email", name="user[email]", placeholder="输入邮箱")
-        .form-group
-            .col-sm-offset-2.col-sm-10
-            button.btn.btn-default(type="submit") 完成注册
+    if signinfo.logined
+        div.alert.alert-success 您已经登录过了
+    else
+        if signinfo.unsign
+            form.form-horizontal( role="form", method="POST", action="/signup")
+                .form-group
+                    label.col-sm-2.control-label(for="signupName") 用户名
+                    .col-sm-10
+                    input#signupName.form-control(type="text", name="user[name]", placeholder="输入用户名" required='true')
+                .form-group
+                    label.col-sm-2.control-label(for="signuppassword") 密码
+                    .col-sm-10
+                    input#signuppassword.form-control(type="password", name="user[password]", placeholder="输入密码" required='true')
+                .form-group
+                    label.col-sm-2.control-label(for="signupemail") 邮箱
+                    .col-sm-10
+                    input#signupemail.form-control(type="email", name="user[email]", placeholder="输入邮箱" required='true')
+                .form-group
+                    .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type="submit") 完成注册
+        if signinfo.signed
+            form.form-horizontal( role="form", method="POST", action="/signup/success")
+                button.btn.btn-primary(type="submit") 该账户已存在，去登录
+        if signinfo.signsucess
+            form.form-horizontal( role="form", method="POST", action="/signup/success")
+                button.btn.btn-primary(type="submit") 注册成功去登陆
