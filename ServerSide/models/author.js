@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const authorSchema = new Schema({
     first_name: { type: String, required: true, max: 100 },
-    last_name: { type: String, required: true, max: 100 }
+    last_name:  { type: String, required: true, max: 100 }
 })
 
 authorSchema.virtual('name')
@@ -18,7 +18,7 @@ authorSchema.virtual('name')
         }
         return fullName
     })
-
+    
 authorSchema.virtual('url')
 .get(function(){
     return `/catalog/author/${this._id}`
